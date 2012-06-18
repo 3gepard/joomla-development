@@ -1,0 +1,161 @@
+/* 
+ * autor: Branimir Topic 
+ * date: 12/10/10
+ * modified: 14/10/10
+ * url: www.treegepard.com
+ */
+
+div#banner-rotator-nonav, 
+div#green-user1-rotator, 
+div#green-user1-rotator-nonav, 
+div#purple-user2-rotator {
+	display: block;
+	float: left;
+	font-size: 11px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+	z-index: 10;
+}
+
+div#banner-rotator-nonav,
+div#green-user1-rotator-nonav {
+	height: 100%!important;
+	width: 100%!important;
+        color: #fff;
+}
+
+div#green-user1-rotator,
+div#purple-user2-rotator {
+	height: 90%!important;
+	width: 100%!important;
+}
+
+/* paragraph */
+div#banner-rotator-nonav p,
+div#green, div#purple {
+	margin: 0;
+	padding: 0;
+}
+
+div#purple p {
+	color: #ccc;
+}
+
+/* images on slide rotation */
+/*
+div#purple div.content div p img {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+}
+*/
+
+/* navigation */
+div#green-user1-rotator-navigation, div#purple-user2-rotator-navigation {
+	color: #fff;
+	display: block;
+	float: left;
+	height: 15px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+	width: 100%;
+}
+
+/* titles - links - readmore */
+div#green h3.title,
+div#purple h3.title{
+	margin: 0 0 10px 0;
+	padding: 0;
+}
+
+div#green h3.title a,
+div#purple h3.title a {
+	color: #fff;
+	font-size: 18px;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+div#green h3.title a:hover,
+div#green div.read-more a.readon:hover,
+div#green-user1-pager a.activeSlide {
+	color: #680B92;
+}
+
+div#purple h3.title a:hover,
+div#purple div.read-more a.readon:hover,
+div#purple-user2-pager a.activeSlide {
+	color: #00CC40;
+}
+
+div#green div.read-more a.readon {
+	color: #575758;
+}
+div#purple div.read-more a.readon {
+	color: #ccc;
+}
+
+/* navigation - green, purple, lists */
+div#prev, div#next {
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	float: right;
+	font-size: 16px;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	width: 15px;
+}
+
+div#green-user1-pager, div#purple-user2-pager {
+	display: block;
+	cursor: pointer;
+	float: left;
+	height: 100%;
+	position: relative;
+	width: 80%;
+}
+
+div#green-user1-pager a,
+div#purple-user2-pager a {
+	display: block;
+	float: left;
+	color: #fff;
+	font-size: 10px;
+	margin: 0;
+	padding: 3px 0 0 0;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+	width: 10px;
+}
+
+div.banner-rotator-nonav-fulltext {
+	color: #fff;
+	display: block;
+	float: right;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 20px;
+	top: 0;
+	width: 920px;
+}
+
+div.newsletterbox {
+	color: #fff; width: 100%;
+}
+
+div.newsletterbox p {
+	margin: 0px;
+	padding: 0px;
+}

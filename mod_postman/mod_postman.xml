@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>Postman</name>
+	<creationDate>2012</creationDate>
+	<author>Branimir Topic</author>
+	<authorEmail>info@threegepard.com</authorEmail>
+	<authorUrl>The 3Gepard Project</authorUrl>
+	<copyright>2012 3Gepard All rights reserved</copyright>
+	<license></license>
+	<authorEmail>branimir.topic@gmail.com</authorEmail>
+	<authorUrl>www.threegepard.com</authorUrl>
+	<version>1.0.1</version>
+	<description>Newsletter subscription module</description>
+	<files>
+		<filename module="mod_postman">mod_postman.php</filename>
+		<filename>mod_postman.xml</filename>
+	</files>
+	<languages>
+		<language tag="en">en-AU</language>
+	</languages>	
+	<media></media>
+	<config>
+		<fields name="params">
+			<fieldset name="basic"
+				addfieldpath="/administrator/components/com_banners/models/fields">
+				<field name="divstyle" type="textarea" label="Module div style" size="2000" 
+					id="divstyle" cols="40" rows="5" 
+					default="float: left; font-size:11px; overflow: hidden;position: relative;" description="Set CSS for module DIV." />
+				<field name="labelstyle" type="textarea" label="Module label style" size="2000" 
+					id="labelstyle" cols="40" rows="5" 
+					default="float: left; overflow: hidden; padding: 0 0 20px; position: relative; width:50px;" description="Set CSS for module LABEL." />
+				<field name="inputstyle" type="textarea" label="Module input style" size="2000" 
+					id="inputstyle" cols="40" rows="5" 
+					default="float: left; overflow: hidden;position: relative;" description="Set CSS for module INPUT." />
+				<field name="selectstyle" type="textarea" label="Module select style" size="2000" 
+					id="selectstyle" cols="40" rows="5" 
+					default="float: left; overflow: hidden;position: relative;" description="Set CSS for module SELECT." />
+				<field name="buttonstyle" type="textarea" label="Module button style" size="2000" 
+					id="buttonstyle" cols="40" rows="5" 
+					default="float: left; overflow: hidden;position: relative;" description="Set CSS for module BUTTON." />
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>

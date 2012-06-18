@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0">
+	<name>Flash News Rotator</name>
+	<author>3Geppard</author>
+	<creationDate>May 2010</creationDate>
+	<copyright>Copyright (C) 2010 3Geppard. All rights reserved.</copyright>
+	<license></license>
+	<authorEmail>branimir.topic@gmail.com</authorEmail>
+	<authorUrl>http://www.threegepard.org</authorUrl>
+	<version>1.0.1</version>
+	<description>Flash News Rotator</description>
+	<files>
+		<filename module="mod_flashnewsrotator">css/index.html</filename>
+		<filename module="mod_flashnewsrotator">css/flashnewsrotator.css</filename>
+		<filename module="mod_flashnewsrotator">images/navigation.png</filename>
+		<filename module="mod_flashnewsrotator">js/index.html</filename>
+		<filename module="mod_flashnewsrotator">js/jquery-1.4.2.min.js</filename>
+		<filename module="mod_flashnewsrotator">js/jquery.cycle.js</filename>
+		<filename module="mod_flashnewsrotator">tmpl/default.php</filename>
+		<filename module="mod_flashnewsrotator">tmpl/index.html</filename>
+		<filename module="mod_flashnewsrotator">helper.php</filename>
+		<filename module="mod_flashnewsrotator">index.html</filename>
+		<filename module="mod_flashnewsrotator">mod_flashnewsrotator.php</filename>
+		<filename module="mod_flashnewsrotator">mod_flashnewsrotator.xml</filename>
+	</files>
+	<params>
+		<param name="count" type="text" default="5" label="Count"
+			description="The number of items to display (default 5)" />
+		<param name="ordering" type="list" default="create_dsc" label="Ordering"
+			description="Ordering options">
+			<option value="c_dsc">Recently Added First</option>
+			<option value="m_dsc">Recently Modified First</option>
+			<option value="ord">By order</option>
+		</param>
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="show_front" type="radio" default="1" label="Frontpage Items"
+			description="PARAMFRONTPAGEITEMS">
+			<option value="1">show</option>
+			<option value="0">hide</option>
+		</param>
+		<param name="set_article_id" type="text" default=""
+			label="Set article ID's" description="Article Id number. You can enter a coma separated SET of IDs." />
+		<param name="@spacer" type="spacer" default="" label=""
+			description="" />
+		<param name="continuous" type="radio" default="0" label="Continuos"
+			description="Start next transition immediately after current one completes">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="fx" type="list" default="scrollDown" label="Effect"
+			description="Name of transition effect">
+			<option value="blindX">blindX</option>
+			<option vlaue="blindY">blindY</option>
+			<option value="blindZ">blindZ</option>
+			<option value="cover">cover</option>
+			<option value="curtainX">curtainX</option>
+			<option value="curtainY">curtainY</option>
+			<option value="fade">fade</option>
+			<option value="fadeZoom">fadeZoom</option>
+			<option value="growX">growX</option>
+			<option value="growY">growY</option>
+			<option value="none">none</option>
+			<option value="scrollUp">scrollUp</option>
+			<option value="scrollDown">scrollDown</option>
+			<option value="scrollLeft">scrollLeft</option>
+			<option value="scrollRight">scrollRight</option>
+			<option value="scrollHorz">scrollHorz</option>
+			<option value="scrollVert">scrollVert</option>
+			<option value="shuffle">shuffle</option>
+			<option value="slideX">slideX</option>
+			<option value="slideY">slideY</option>
+			<option value="toss">toss</option>
+			<option value="turnUp">turnUp</option>
+			<option value="turnDown">turnDown</option>
+			<option value="turnLeft">turnLeft</option>
+			<option value="turnRight">turnRight</option>
+			<option value="uncover">uncover</option>
+			<option value="wipe">wipe</option>
+			<option value="zoom">zoom</option>
+		</param>
+		<param name="fx_additional_vars" type="text" default=""
+			label="Additional vars" description="" />
+		<param name="speed" type="text" default="1000" label="Speed"
+			description="The speed option defines the number of milliseconds it will take to transition from one slide to the next" />
+		<param name="timeout" type="text" default="3000" label="Timeout"
+			description="Milliseconds between slide transitions (0 to disable auto advance)" />
+		<param name="@spacer" type="spacer" label="" description="" />
+		<param name="fit" type="radio" default="1" label="Fit Slides"
+			description="Force slides to fit container">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="containerResize" type="radio" default="1"
+			label="Container Resize" description="Resize container to fit largest slide.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="@spacer" type="spacer" label="" description="" />
+		<param name="isBanner" type="radio" default="0" label="Is like banner behaviour" 
+			description="Yes to hide all navigation links.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="showNavigation" type="radio" label="Show navigation" default="1" description="Show navigation links.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="showNumbers" type="radio" label="Show numbered navigation" default="1" description="Show numberd navigation links.">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="rotator" type="text" default="rotator" label="Rotator selector" 
+			description="Rotator expresion selector." />
+		<param name="slide" type="text" default="slide" label="Slide selector"
+			description="Slide Expression selector." />
+		<param name="pager" type="text" default="pager" label="Pager"
+			description="Selector for element to use as pager container" />
+		<param name="@spacer" type="spacer" label="" description="" />
+		<param name="readMore" type="text" label="Read more" default="read more &#187;"
+			description="Read more text. (To add special character see for more info http://www.w3schools.com/css/pr_gen_quotes.asp)" />
+	</params>
+	<params group="advanced">
+		<param name="use_google_api_jquery" type="radio" label="Use Google Api's (JQuery)" default="0" description="Use Google APIs JQuery(http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js).">
+			<option value="0">No</option>
+			<option value="1">Yes</option>
+		</param>
+		<param name="layout" type="text" default="default"
+			label="Layout" description="template layout" />
+	</params>
+</install>
