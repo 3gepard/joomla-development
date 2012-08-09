@@ -21,18 +21,16 @@ define('COM_POSTMAN_REMOVE_ERROR', 'Error removing %!');
 define('COM_POSTMAN_SAVE_SUCCESS', '%s successfully saved!');
 define('COM_POSTMAN_SAVE_ERROR', 'Error saving %s!');
 define('COM_POSTMAN_RECORD_NOT_FOUND', '%s not found');
-define('COM_POSTMAN_EMPTY_LOG_SUCCESS', 'Log successfully emptied.');
-
+define('COM_POSTMAN_EMPTY_LOG_SUCCESS', 'Log successfully emptied');
+define('COM_POSTMAN_ENTRY_SAVED_SUCCESS', '%s successfully saved');
+define('COM_POSTMAN_ENTRIES_REMOVED', '%d %s(s) successfully removed');
 
 define('COM_POSTMAN_NEWSLETTER_SAVE_SUCCESS', 'Newsletter successfully saved');
 define('COM_POSTMAN_NEWSLETTER_N_ITEMS_REMOVED', '%d newsletter(s) successfully removed');
-
 define('COM_POSTMAN_SUBSCRIBER_SAVE_SUCCESS', 'Subscriber successfully saved');
 define('COM_POSTMAN_SUBSCRIBER_REMOVED', 'Subscriber (%d) removed from group (%d)');
 define('COM_POSTMAN_SUBSCRIBER_DELETED', 'Subscriber (%d) deleted');
-
 define('COM_POSTMAN_SUBSCRIBER_N_ITEMS_REMOVED', '%d subscriber(s) successfully removed');
-
 define('COM_POSTMAN_GROUP_SAVE_SUCCESS', 'Group successfully saved');
 define('COM_POSTMAN_GROUP_N_ITEMS_REMOVED', '%d group(s) successfully removed');
 
@@ -133,7 +131,7 @@ final class AdminController extends ProximityController {
 			JRequest::setVar("limitstart", null);
 			JRequest::setVar("limit", null);
 		}catch(ErrorException $e){
-			$this->handleError($e, sprintf(COM_POSTMAN_EDIT_ERROR, 'newsletter'));
+			$this->handleError($e, sprintf(COM_POSTMAN_SAVE_ERROR, 'newsletter'));
 			return false;
 		}
 	
@@ -217,6 +215,9 @@ final class AdminController extends ProximityController {
 			if ($nDeleted) {
 				$msg = sprintf(COM_POSTMAN_NEWSLETTER_N_ITEMS_REMOVED, $nDeleted);
 				JFactory::getApplication()->enqueueMessage($msg);
+			}else{
+				$msg = sprintf(COM_POSTMAN_RECORD_NOT_FOUND, "Newsletter(s)");
+				JFactory::getApplication()->enqueueMessage($msg);
 			}
 
 			JRequest::setVar("limitstart", null);
@@ -231,27 +232,20 @@ final class AdminController extends ProximityController {
 		// Validate access rights - form.token must be added in form
 		//JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
-		try 
-		{
-			$limitstart = JRequest::getVar("limitstart", 0);
-			$limit = JRequest::getVar("limit", $this->_params->get("listLimit"));
-			$model = $this->getModel("NewsLettersModel");
-			$view = $this->getView("ListNewsLettersView");
+		$limitstart = JRequest::getVar("limitstart", 0);
+		$limit = JRequest::getVar("limit", $this->_params->get("listLimit"));
+		$model = $this->getModel("NewsLettersModel");
+		$view = $this->getView("ListNewsLettersView");
 		
-			$total = $model->count();
+		$total = $model->count();
 		
-			$letters = $model->getBlockWise($limitstart, $limit);
-			$pagination = new JPagination($total, $limitstart, $limit);
+		$letters = $model->getBlockWise($limitstart, $limit);
+		$pagination = new JPagination($total, $limitstart, $limit);
 		
-			$view->setPage($pagination);
-			$view->setLetters($letters);
+		$view->setPage($pagination);
+		$view->setLetters($letters);
 		
-			$view->display();
-		}catch(ErrorException $e){
-			JError::raiseWarning(100, sprintf(COM_POSTMAN_REMOVE_ERROR, 'newsletter', $e->getMessage()));
-			$this->showMainMenu();
-			return false;
-		}
+		$view->display();
 		return true;
 	}
 	// SUBSCRIBERS -------------------------------------------------------
