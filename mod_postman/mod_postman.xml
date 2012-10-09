@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension
-	type="module"
-	version="2.5"
-	client="site"
-	method="upgrade">
+<extension type="module" version="2.5" client="site" method="upgrade">
 	<name>Postman</name>
 	<creationDate>2012</creationDate>
-	<author>Branimir Topic</author>
-	<authorEmail>info@threegepard.com</authorEmail>
-	<authorUrl>The 3Gepard Project</authorUrl>
-	<copyright>2012 3Gepard All rights reserved</copyright>
-	<license></license>
-	<authorEmail>branimir.topic@gmail.com</authorEmail>
+	<author>3Gepard</author>
+	<authorEmail>joomla@threegepard.com</authorEmail>
+	<authorUrl>www.threegepard.com</authorUrl>
+	<copyright>2009-2012 3Geppard All rights reserved</copyright>
+	<license>3Geppard All rights reserved</license>
+	<authorEmail>joomla@threeepard.com</authorEmail>
 	<authorUrl>www.threegepard.com</authorUrl>
 	<version>1.0.1</version>
 	<description>Newsletter subscription module</description>
@@ -29,16 +25,17 @@
 				addfieldpath="/administrator/components/com_banners/models/fields">
 				<field name="divstyle" type="textarea" label="Module div style" size="2000" 
 					id="divstyle" cols="40" rows="5" 
-					default="float: left; font-size:11px; overflow: hidden;position: relative;" description="Set CSS for module DIV." />
+					default="background: #829E34; border-radius: 10px; color: #fff; font-size:11px; font-weight: bolder; float: right; height: 54px; overflow: hidden; padding: 16px 0 0 0;
+position: relative; width: 290px;" description="Set CSS for module DIV." />
 				<field name="labelstyle" type="textarea" label="Module label style" size="2000" 
 					id="labelstyle" cols="40" rows="5" 
-					default="float: left; overflow: hidden; padding: 0 0 20px; position: relative; width:50px;" description="Set CSS for module LABEL." />
+					default="float:left; overflow:hidden; padding:0 0 0 15px; position:relative; width:70px;" description="Set CSS for module LABEL." />
 				<field name="inputstyle" type="textarea" label="Module input style" size="2000" 
 					id="inputstyle" cols="40" rows="5" 
-					default="float: left; overflow: hidden;position: relative;" description="Set CSS for module INPUT." />
+					default="float: left; overflow: hidden;position: relative; width: 180px;" description="Set CSS for module INPUT." />
 				<field name="selectstyle" type="textarea" label="Module select style" size="2000" 
 					id="selectstyle" cols="40" rows="5" 
-					default="float: left; overflow: hidden;position: relative;" description="Set CSS for module SELECT." />
+					default="float: left; overflow: hidden;position: relative; width:114px;" description="Set CSS for module SELECT." />
 				<field name="buttonstyle" type="textarea" label="Module button style" size="2000" 
 					id="buttonstyle" cols="40" rows="5" 
 					default="float: left; overflow: hidden;position: relative;" description="Set CSS for module BUTTON." />

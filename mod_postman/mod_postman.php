@@ -7,7 +7,8 @@
 
 // no direct access
 defined('_JEXEC') or die('Restricted access');
-require_once(JPATH_ADMINISTRATOR.DS."components".DS."com_postman".DS."models".DS."NewsGroupsModel.class.php");
+require_once(JPATH_ADMINISTRATOR.DS."components".DS."com_postman".DS."models".DS."NewsletterGroupsModel.class.php");
+require_once(JPATH_ADMINISTRATOR.DS."components".DS."com_postman".DS."models".DS."TicketsModel.class.php");
 
 $divstyle = $params->get("divstyle");
 $labelstyle	= $params->get("labelstyle");
@@ -15,18 +16,20 @@ $inputstyle	= $params->get("inputstyle");
 $selectstyle = $params->get("selectstyle");
 $buttonstyle = $params->get("buttonstyle");
 
-$model = new NewsGroupsModel();
+$model = new NewsletterGroupsModel();
 $groups = $model->getPublicGroups();
-
+//TODO: get tag from config
+$tag = md5("postman");
+$type = TICKET_SUBSCRIBE;
 echo <<< HTML
 	<div id="postman" style="{$divstyle}">
-		<form name="inputForm" action="administrator/index`.php?option=com_postman&task=subscribeToNewsletter" method="post">
-			<label id="lbEmail" style="{$labelstyle}">Email&nbsp;:</label><input id="email" type="text" name="email" style="{$inputstyle}" /><br/>
+		<form name="inputForm" action="component/index.php?option=com_postman&task=subscribe" method="post">
+			<label id="lbEmail" style="{$labelstyle}">Email&nbsp;:</label><input id="postman-email" type="text" name="postman-email" style="{$inputstyle}" /><br/>
 HTML;
 			echo <<< HTML
 
 			<label id="groups" style="{$labelstyle}">Newsletter&nbsp;:</label>
-			<select name="group" style="{$selectstyle}">
+			<select id="postman-group" name="postman-group" style="{$selectstyle}">
 HTML;
 			$i = 0;
 			foreach ($groups as $group) {
@@ -37,6 +40,7 @@ HTML;
 HTML;
 				$i++;
 			}
+
 			echo <<< HTML
 			</select>
 HTML;
@@ -45,6 +49,8 @@ HTML;
 
 echo <<< HTML
 			<input id="submit" type="submit" value="Subscribe" style="{$buttonstyle}" /></td>
+			<input id="postman-type" name="postman-type" type="hidden" value="{$type}" />
+			<input id="postman-tag" name="postman-tag" type="hidden" value="{$tag}" />
 			{$token} 
 		</form>
 	</div>

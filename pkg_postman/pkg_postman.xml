@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="package" version="2.5">
+	<name>pkg_postman</name>
+	<packagename>Postman</packagename>
+	<packager>3Gepard</packager>
+	<packagerurl>http://www.threegepard.com</packagerurl>
+	<copyright>Copyright (C) 2012 3Gepard. All Rights Reserved.</copyright>
+	<license>GNU General Public License version 2 or later.</license>
+	<author>3Gepard</author>
+	<authorEmail>joomla@threegepard.com</authorEmail>
+	<authorUrl>http://www.threegepard.org</authorUrl>
+	<creationDate>May 2012</creationDate>
+	<description>
+		<![CDATA[<a target="_blank" href="http://www.threegepard.com/"></a>]]>
+	</description>
+	<version>2.5.1</version>
+	<scriptfile>pkg_script.php</scriptfile>
+	<!-- EXTENSIONS -->
+	<files folder="extensions">
+		<!-- Component -->
+		<file type="component" id="com_postman">com_postman.zip</file>
+		<file type="module" id="mod_postman" client="site">mod_postman.zip</file>
+		<file type="library" id="mvc3gepard">mvc3gepard.zip</file>
+		<!-- <file type="plugin" id="100" group="postman">plg_postman.zip</file> -->
+	</files>
+	<!-- UPDATES -->
+	<updateservers>
+		<server type="extension" priority="1" name="3Gepard Postman Updates">http://www.threegepard.com/updates/postman_package.xml</server>
+	</updateservers>
+</extension>

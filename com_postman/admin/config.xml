@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset
+		name="Newsletter"
+		label="Postman Newsletter"
+		description="This component enables creating and sending newsletter to registered users">
+		<field
+			name="subscriptionSubject" 
+			type="text" 
+			default="Newsletter subscription" 
+			size="50"
+			label="Sender Email Address" 
+			description="From email">
+		</field>
+		<field
+			name="cancelationSubject" 
+			type="text" 
+			default="Newsletter cancelation" 
+			size="50"
+			label="Sender Email Address" 
+			description="From email">
+		</field>
+		<field
+			name="@spacer" 
+			type="spacer" 
+			default="" 
+			label=""
+			description="">
+		</field>
+		<field
+			name="subscriptionConfirmationSubject" 
+			type="text" 
+			default="Newsletter subscription confirmation" 
+			size="50"
+			label="Sender Email Address" 
+			description="From email">
+		</field>
+		<field
+			name="cancelationConfirmationSubject" 
+			type="text" 
+			default="Newsletter cancelation confirmation" 
+			size="50"
+			label="Sender Email Address" 
+			description="From email">
+		</field>
+		<field
+			name="@spacer" 
+			type="spacer" 
+			default="" 
+			label=""
+			description="">
+		</field>
+		<field
+			name="subscribtionKey" 
+			type="text" 
+			default="sX391se4%rA3Df"
+			label="Subscription encription key" 
+			size="20"
+			description="This key is used to generate subscribers validation ticket id">
+		</field>
+		<field
+			name="cancelationKey" 
+			type="text" 
+			default="saAEGb;se4%rA3Dd"
+			label="Cancelation encription key" 
+			size="20"
+			description="This key is used to generate subscribers validation ticket id">
+		</field>
+		<field
+			name="@spacer" 
+			type="spacer" 
+			default="" 
+			label=""
+			description="">
+		</field>
+		<field
+			name="debug" 
+			type="radio" 
+			default="0" 
+			size="20"
+			label="DEBUG" 
+			description="Log debug messages">
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+		</field>
+	</fieldset>
+</config>
