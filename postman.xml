@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: postman.xml 51 2012-04-02 01:33:21Z branimir $ -->
+<extension type="component" version="2.5" method="upgrade">
+	<name>Postman</name>
+    <creationDate>April 2012</creationDate>
+	<author>3Gepard</author>
+	<authorEmail>joomla@threegepard.com</authorEmail>
+	<authorUrl>www.threegepard.com</authorUrl>
+	<copyright>2012 3Geppard All rights reserved</copyright>
+	<license>2009 Copyright Three Gepard (www.threegepard.com)</license>
+	<version>2.5.1</version>
+	<description>Newsletter component for sending a news-letters to registered subscribers and newsgroups.</description>
+	<scriptfile>script.php</scriptfile>
+	<update>
+		<schemas>
+			<schemapath type="mysql">
+			</schemapath>
+		</schemas>
+	</update>
+
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>postman.php</filename>
+		<folder>controllers</folder>
+	</files>
+
+	<administration>
+		<menu img="class:article">Postman</menu>
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>postman.php</filename>
+			<filename>postman.xml</filename>
+			<filename>script.php</filename>
+			<folder>controllers</folder>
+			<folder>models</folder>
+			<folder>mvc</folder>
+			<folder>sql</folder>
+			<folder>utils</folder>
+			<folder>views</folder>
+		</files>
+	</administration>
+
+	<languages folder="admin">
+		<language tag="en-GB">language/en-GB/en-GB.com_postman.ini</language>
+	</languages>
+
+	<!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<!-- Note: No spaces or linebreaks allowed between the server tags -->
+		<server type="extension" priority="1" name="Postman Update Site">http://www.threegepard.com/update/postman-update.xml</server>
+	</updateservers>
+ 
+</extension>
+

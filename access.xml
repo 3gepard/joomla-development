@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<access component="com_postman">
+	<section name="component">
+		<action name="core.admin" title="JACTION_ADMIN" description="JACTION_ADMIN_COMPONENT_DESC" />
+	</section>
+	<section name="category">
+		<action name="core.create" title="JACTION_CREATE" description="COM_CATEGORIES_ACCESS_CREATE_DESC" />
+	</section>
+	<section name="child">
+		<action name="core.delete" title="JACTION_DELETE" description="COM_CHILDREN_ACCESS_DELETE_DESC" />
+	</section>
+</access>
